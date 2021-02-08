@@ -6,6 +6,9 @@ export async function handler(event, context) {
   try {
     const response = await axios.get("https://icanhazdadjoke.com", { headers: { Accept: "application/json" } })
     const data = response.data
+    console.warn("This Event might not be processed.")
+    console.log(data.joke)
+    console.error("No error, just testing")
     return {
       statusCode: 200,
       body: JSON.stringify({ msg: data.joke })
