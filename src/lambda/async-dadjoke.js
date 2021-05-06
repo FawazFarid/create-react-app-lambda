@@ -8,7 +8,7 @@ export async function handler(event, context) {
     const data = response.data
     console.warn("This Event might not be processed.")
     console.log(data.joke)
-    console.error("No error, just testing")
+    console.error("An example error")
     return {
       statusCode: 200,
       body: JSON.stringify({ msg: data.joke })
