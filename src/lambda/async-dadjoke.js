@@ -4,10 +4,10 @@
 import axios from "axios"
 export async function handler(event, context) {
   try {
-    const response = await axios.get("https://icanhazdadjoke.com", { headers: { Accept: "application/json" } })
+    const response = await axios.get("https://api.chucknorris.io/jokes/random", { headers: { Accept: "application/json" } })
     const data = response.data
     console.warn("Beware: This is a warning line, do not ignore it.")
-    console.log(data.joke)
+    console.log(data.value)
     console.error("No error, just testing")
     return {
       statusCode: 200,
