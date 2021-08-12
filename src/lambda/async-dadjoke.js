@@ -6,12 +6,12 @@ export async function handler(event, context) {
   try {
     const response = await axios.get("https://api.chucknorris.io/jokes/random", { headers: { Accept: "application/json" } })
     const data = response.data
-    console.warn("Beware: This is a warning line, do not ignore it.")
+    console.warn("Beware: This is a warning log line, do not ignore it.")
     console.log(data.value)
     console.error("No error, just testing")
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.joke })
+      body: JSON.stringify({ msg: data.value })
     }
   } catch (err) {
     console.log(err) // output to netlify function log
